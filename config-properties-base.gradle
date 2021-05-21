@@ -1,0 +1,22 @@
+class Config {
+    Properties commonProperties
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Pull in config properties                                                                      //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ext {
+    config = new Config()
+    def basePath = rootDir.absolutePath + "/config/"
+
+    config.commonProperties = new Properties()
+    def commonPropertiesFileName = "config.properties"
+    config.commonProperties.load(new FileInputStream(rootProject.file((basePath + commonPropertiesFileName))))
+}
+
+android {
+    defaultConfig {
+        buildConfigField "String", "BASE_URL", "\"${config.commonProperties.base_url}\""
+    }
+}

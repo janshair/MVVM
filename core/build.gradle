@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+apply from: '../config-android.gradle'
+apply from: '../config-properties-base.gradle'
+
+
+
+dependencies {
+
+    implementation design.material
+    implementation design.appcompat
+    implementation design.fragment
+    implementation design.fragment_ktx
+    implementation di.koin
+
+    implementation coroutine.values()
+    implementation network.values()
+    testImplementation testDependencies.junit
+    testImplementation coroutineTest.coroutine_test
+    androidTestImplementation androidTestDependencies.values()
+}

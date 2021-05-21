@@ -1,2 +1,4 @@
 rootProject.name = "MVVM"
 include ':app'
+include ':core'
+include ':users'
