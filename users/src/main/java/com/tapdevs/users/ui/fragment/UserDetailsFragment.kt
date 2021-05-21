@@ -1,7 +1,6 @@
 package com.tapdevs.users.ui.fragment
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,12 +16,12 @@ import com.tapdevs.users.databinding.FragmentUserDetailsBinding
 
 private const val EXTRA_PROFILE_URL = "EXTRA_PROFILE_URL"
 private const val TAG = "UserDetailsFragment"
-class UserDetailsFragment: Fragment() {
+class UserDetailsFragment : Fragment() {
 
     /**
      * Progress and error views can be added to make a better UI. See UsersFragment for implementation
      */
-    
+
     private lateinit var fragmentUserDetailsBinding: FragmentUserDetailsBinding
 
     private var profileUrl: String? = null
@@ -37,11 +36,10 @@ class UserDetailsFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        fragmentUserDetailsBinding =  FragmentUserDetailsBinding.inflate(inflater, container, false)
+        fragmentUserDetailsBinding = FragmentUserDetailsBinding.inflate(inflater, container, false)
         return fragmentUserDetailsBinding.root
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpWebView()
@@ -54,6 +52,7 @@ class UserDetailsFragment: Fragment() {
         } ?: Toast.makeText(activity, getString(R.string.error_loading_data), Toast.LENGTH_SHORT).show()
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private fun setUpWebView() {
         val userDetailsWebViewClient: WebViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
@@ -67,7 +66,5 @@ class UserDetailsFragment: Fragment() {
             val javascriptInterface = JavaScriptInterface()
             addJavascriptInterface(javascriptInterface, getString(R.string.details_page))
         }
-
     }
-
 }

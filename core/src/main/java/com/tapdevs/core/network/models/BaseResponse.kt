@@ -2,7 +2,7 @@ package com.tapdevs.core.network.models
 
 import com.google.gson.annotations.SerializedName
 
-data class ErrorResponse (
+data class ErrorResponse(
 
     @SerializedName(value = "message")
     var message: String? = null,

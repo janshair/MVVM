@@ -19,7 +19,7 @@ import com.tapdevs.users.ui.adapter.UsersAdapter
 import com.tapdevs.users.viewmodel.UsersViewModel
 import org.koin.android.ext.android.inject
 private const val EXTRA_PROFILE_URL = "EXTRA_PROFILE_URL"
-class UsersFragment: BaseFragment() {
+class UsersFragment : BaseFragment() {
 
     private val usersViewModel: UsersViewModel by inject()
 
@@ -52,16 +52,19 @@ class UsersFragment: BaseFragment() {
     }
 
     private fun subscribeToEvents() {
-        usersViewModel.getAllUsers().observe(viewLifecycleOwner, {
-            when(it.status) {
-                Status.LOADING -> showProgress()
-                Status.SUCCESS -> {
-                    showSuccessResponse()
-                    loadData(it.data)
+        usersViewModel.getAllUsers().observe(
+            viewLifecycleOwner,
+            {
+                when (it.status) {
+                    Status.LOADING -> showProgress()
+                    Status.SUCCESS -> {
+                        showSuccessResponse()
+                        loadData(it.data)
+                    }
+                    Status.ERROR -> showError(it.message ?: getString(R.string.error_loading_data))
                 }
-                Status.ERROR -> showError(it.message ?: getString(R.string.error_loading_data))
             }
-        })
+        )
         usersViewModel.fetchAllUsers()
     }
 
@@ -69,21 +72,20 @@ class UsersFragment: BaseFragment() {
         users?.let {
             loadUsersInRecyclerView(it)
         } ?: showError(getString(R.string.error_loading_data))
-
     }
 
     private fun loadUsersInRecyclerView(users: List<User>) {
         usersAdapter = UsersAdapter(activity as BaseActivity, users)
         fragmentUsersBinding.usersSuccess.rvUsers.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter= usersAdapter
+            adapter = usersAdapter
         }
         usersAdapter.userClicked = {
-            //Go to User profile
+            // Go to User profile
             val bundle = bundleOf(
                 EXTRA_PROFILE_URL to it.htmlUrl
             )
-            if(::navController.isInitialized){// should be true always
+            if (::navController.isInitialized) { // should be true always
                 navController.navigate(R.id.action_usersFragment_to_userDetailsFragment, bundle)
             }
         }

@@ -8,7 +8,7 @@ import com.tapdevs.users.data.model.User
 import com.tapdevs.users.repository.UserRepository
 import kotlinx.coroutines.launch
 
-class UsersViewModel(private val usersRepository: UserRepository): ViewModel() {
+class UsersViewModel(private val usersRepository: UserRepository) : ViewModel() {
     private val allUsers: MutableLiveData<Resource<List<User>>> = MutableLiveData<Resource<List<User>>>()
 
     fun fetchAllUsers() {
@@ -19,5 +19,4 @@ class UsersViewModel(private val usersRepository: UserRepository): ViewModel() {
     }
 
     fun getAllUsers() = allUsers
-
 }

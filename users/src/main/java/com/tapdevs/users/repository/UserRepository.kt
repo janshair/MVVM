@@ -1,15 +1,13 @@
 package com.tapdevs.users.repository
 
 import com.tapdevs.core.network.ResponseHandler
-import com.tapdevs.core.network.models.ErrorResponse
 import com.tapdevs.users.data.service.UsersService
 
 class UserRepository(private val usersService: UsersService, private val responseHandler: ResponseHandler) {
-    suspend fun getUsers() = try{
+    suspend fun getUsers() = try {
         val response = usersService.getUsers()
         responseHandler.handleSuccess(data = response)
     } catch (e: Exception) {
         responseHandler.handleException(e)
     }
-
 }

@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-abstract class BaseFragment: Fragment() {
+abstract class BaseFragment : Fragment() {
 
     abstract fun getErrorView(): View
 
@@ -20,11 +20,10 @@ abstract class BaseFragment: Fragment() {
 
     private fun progressStatus(viewStatus: Int) {
         getWaitingView().visibility = viewStatus
-        if(viewStatus == View.VISIBLE){
+        if (viewStatus == View.VISIBLE) {
             hideError()
             hideSuccessResponse()
         }
-
     }
 
     fun showError(message: String) {
@@ -36,7 +35,7 @@ abstract class BaseFragment: Fragment() {
 
     private fun errorStatus(viewStatus: Int) {
         getErrorView().visibility = viewStatus
-        if(viewStatus == View.VISIBLE){
+        if (viewStatus == View.VISIBLE) {
             hideProgress()
             hideSuccessResponse()
         }
@@ -48,7 +47,7 @@ abstract class BaseFragment: Fragment() {
 
     private fun successResponseStatus(viewStatus: Int) {
         getSuccessView().visibility = viewStatus
-        if(viewStatus == View.VISIBLE){
+        if (viewStatus == View.VISIBLE) {
             hideError()
             hideProgress()
         }
