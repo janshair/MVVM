@@ -1,4 +1,4 @@
-package com.tapdevs.base.network
+package com.tapdevs.core.network
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object {

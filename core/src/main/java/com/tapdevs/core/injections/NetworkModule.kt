@@ -1,8 +1,8 @@
 package com.tapdevs.core.injections
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.tapdevs.base.network.DispatcherType
-import com.tapdevs.base.network.ResponseHandler
+import com.tapdevs.core.network.DispatcherType
+import com.tapdevs.core.network.ResponseHandler
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

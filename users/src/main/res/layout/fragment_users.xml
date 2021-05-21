@@ -4,10 +4,13 @@
     android:layout_height="match_parent">
 
     <include layout="@layout/layout_wait"
+        android:visibility="gone"
         android:id="@+id/usersWait"/>
     <include layout="@layout/layout_error"
+        android:visibility="gone"
         android:id="@+id/usersError"/>
     <include layout="@layout/fragment_user_success"
+        android:visibility="gone"
         android:id="@+id/usersSuccess"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

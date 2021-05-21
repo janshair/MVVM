@@ -1,12 +1,12 @@
-package com.tapdevs.base.network.models
+package com.tapdevs.core.network.models
 
 import com.google.gson.annotations.SerializedName
 
-open class ErrorResponse {
+data class ErrorResponse (
 
     @SerializedName(value = "message")
-    var message: String? = null
+    var message: String? = null,
 
     @SerializedName("documentation_url")
     var documentationUrl: String? = null
-}
+)

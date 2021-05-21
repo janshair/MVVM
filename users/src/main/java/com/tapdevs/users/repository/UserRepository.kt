@@ -1,6 +1,7 @@
 package com.tapdevs.users.repository
 
-import com.tapdevs.base.network.ResponseHandler
+import com.tapdevs.core.network.ResponseHandler
+import com.tapdevs.core.network.models.ErrorResponse
 import com.tapdevs.users.data.service.UsersService
 
 class UserRepository(private val usersService: UsersService, private val responseHandler: ResponseHandler) {

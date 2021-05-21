@@ -1,4 +1,4 @@
-package com.tapdevs.base.network
+package com.tapdevs.core.network
 
 enum class ErrorCodes(val code: Int) {
     SOCKET_TIME_OUT(-1),

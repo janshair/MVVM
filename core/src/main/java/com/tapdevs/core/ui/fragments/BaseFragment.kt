@@ -22,7 +22,7 @@ abstract class BaseFragment: Fragment() {
         getWaitingView().visibility = viewStatus
         if(viewStatus == View.VISIBLE){
             hideError()
-            hideSuccessResponseView()
+            hideSuccessResponse()
         }
 
     }
@@ -38,15 +38,15 @@ abstract class BaseFragment: Fragment() {
         getErrorView().visibility = viewStatus
         if(viewStatus == View.VISIBLE){
             hideProgress()
-            hideSuccessResponseView()
+            hideSuccessResponse()
         }
     }
 
-    fun showSuccessResponseView() = successReponseStatus(View.VISIBLE)
+    fun showSuccessResponse() = successResponseStatus(View.VISIBLE)
 
-    private fun hideSuccessResponseView() = errorStatus(View.GONE)
+    private fun hideSuccessResponse() = successResponseStatus(View.GONE)
 
-    private fun successReponseStatus(viewStatus: Int) {
+    private fun successResponseStatus(viewStatus: Int) {
         getSuccessView().visibility = viewStatus
         if(viewStatus == View.VISIBLE){
             hideError()
