@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="please_wait">Please Wait</string>
+    <string name="error_loading_data">Error Loading Data</string>
+</resources>

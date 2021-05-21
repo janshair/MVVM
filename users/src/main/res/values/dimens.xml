@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius_card">5dp</dimen>
+    <dimen name="layout_margin">20dp</dimen>
+    <dimen name="user_image_size">64dp</dimen>
+</resources>
