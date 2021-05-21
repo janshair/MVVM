@@ -7,5 +7,19 @@
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.tapdevs.users.ui.fragment.UsersFragment"
-        android:label="UsersFragment" />
+        android:label="UsersFragment" >
+        <argument
+            android:name="EXTRA_PROFILE_URL"
+            android:defaultValue="NOT_FOUND"/>
+
+
+
+        <action
+            android:id="@+id/action_usersFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.tapdevs.users.ui.fragment.UserDetailsFragment"
+        android:label="UserDetailsFragment" />
 </navigation>
