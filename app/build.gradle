@@ -13,6 +13,8 @@ android {
 dependencies {
     implementation kotlinLib.kotlinStdLib
 
+    implementation di.values()
+
     testImplementation testDependencies.junit
     androidTestImplementation androidTestDependencies.values()
 

@@ -6,13 +6,13 @@ dependencies {
 
     implementation navigation.values()
     implementation kotlinLib.kotlinStdLib
+    implementation di.koin
     implementation lifecycle.values()
     implementation design.values()
     implementation network.values()
     implementation coroutine.values()
     testImplementation testDependencies.values()
     testImplementation mockito.values()
-    testImplementation koinTest.koin_test
     testImplementation coroutineTest.coroutine_test
     androidTestImplementation androidTestDependencies.values()
 
